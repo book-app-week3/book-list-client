@@ -9,11 +9,12 @@ var app = app || {};
     $('navigation').slideDown(350);
   }
 
-  bookView.initIndexPage = function(ctx) {
+  bookView.initIndexPage = function() {
     reset();
     $('.book-view').show();
-    $('.book-list').empty();
-    app.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    $('#book-list').empty();
+    $('.book-view').append(`<p>There are ${app.Book.all.length} books in the database.</p>`);
+    app.Book.all.forEach(book => $('#book-list').append(book.toHtml()));
   }
   // bookView.initAddForm = function () {
   //   reset();
@@ -35,3 +36,5 @@ var app = app || {};
   // }
   module.bookView = bookView;
 })(app)
+
+$(app.Book.fetchAll(app.bookView.initIndexPage));
