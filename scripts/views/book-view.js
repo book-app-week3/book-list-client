@@ -18,15 +18,16 @@ var app = app || {};
   }
   // bookView.initAddForm = function () {
   //   reset();
-  //   $('.book-view').show();
+  //   $('.add-form-view').show();
   //   $('#add-book').on('submit', function(e) {
   //     e.preventDefault();
   //
   //     let book = {
-  //       book_id: event.target.book_id.value,
   //       title: event.target.title.value,
   //       author: event.target.author.value,
-  //       image_url: event.target.image_url.value
+  //       isbn: event.target.author.value,
+  //       image_url: event.target.image_url.value,
+  //       description: event.target.description.value
   //     };
   //     console.log('book', book);
   //
