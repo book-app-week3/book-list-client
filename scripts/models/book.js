@@ -34,10 +34,10 @@ var __API_URL__ = 'https://gj-jk-booklist.herokuapp.com';
       .then(callback)
       .catch(errorCallback);
 
-  //   Book.createBook = book =>
-  //     $.post(`${__API_URL__}/books/add`, book)
-  //       .then(() => page('/'))
-  //        .catch(errorCallBack);
-
+  Book.createBook = book =>
+    $.post(`${__API_URL__}/books/new`, book)
+      .then(() => page('/'))
+      .then(console.log('what'))
+      .catch(errorCallback);
   module.Book = Book;
 })(app)

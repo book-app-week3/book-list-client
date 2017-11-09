@@ -33,6 +33,7 @@
         <ul>
           <li><a href="/">All Books</a></li>
           <li><a href="/about">About</a></li>
+          <li><a href="/books/new">New Book</a></li>
         </ul>
       </nav>
     </header>
@@ -46,8 +47,18 @@
         <ul id="error-message"></ul>
       </section>
       <section class="detail-view container">
-        <section id="detail-list"><section>
-
+        <section id="detail-list"></section>
+      </section>
+      <section class="create-view container">
+        <h2 class="view-title">Add a New Book</h2>
+        <form id="create-form">
+          <input type="text" name="title" placeholder="title">
+          <input type="text" name="author" placeholder="author">
+          <input type="text" name="isbn" placeholder="isbn">
+          <input type="text" name="image_url" placeholder="image_url">
+          <textarea name="description" placeholder="description" cols="30" rows="5"></textarea>
+          <button type="submit">Submit</button>
+        </form>
       </section>
     </main>
   </body>
