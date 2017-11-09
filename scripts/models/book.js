@@ -16,6 +16,7 @@ var __API_URL__ = 'https://gj-jk-booklist.herokuapp.com';
     let template = Handlebars.compile($('#book-list-template').text());
     return template(this);
   }
+
   Book.all = [];
   Book.loadAll = rows => {
     // rows.sort((a, b) => b.title - a.title)
@@ -33,10 +34,10 @@ var __API_URL__ = 'https://gj-jk-booklist.herokuapp.com';
       .then(callback)
       .catch(errorCallback);
 
-  //   Book.createBook = book =>
-  //     $.post(`${__API_URL__}/books/add`, book)
-  //       .then(() => page('/'))
-  //        .catch(errorCallBack);
-
+  Book.createBook = book =>
+    $.post(`${__API_URL__}/api/v1/books`, book)
+      .then(() => page('/'))
+      .then(console.log('what'))
+      .catch(errorCallback);
   module.Book = Book;
 })(app)
