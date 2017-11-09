@@ -16,6 +16,14 @@ var app = app || {};
     $('.book-view').append(`<p>There are ${app.Book.all.length} books in the database.</p>`);
     app.Book.all.forEach(book => $('#book-list').append(book.toHtml()));
   }
+  bookView.initDetailPage = function(ctx) {
+    reset();
+    $('.detail-view').show();
+    $('#detail-list').empty();
+    let template = Handlebars.compile($('#book-detail-template').text());
+    $('#detail-list').append(template(ctx));
+  }
+
   // bookView.initAddForm = function () {
   //   reset();
   //   $('.add-form-view').show();

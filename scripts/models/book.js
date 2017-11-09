@@ -16,6 +16,7 @@ var __API_URL__ = 'https://gj-jk-booklist.herokuapp.com';
     let template = Handlebars.compile($('#book-list-template').text());
     return template(this);
   }
+
   Book.all = [];
   Book.loadAll = rows => {
     // rows.sort((a, b) => b.title - a.title)
