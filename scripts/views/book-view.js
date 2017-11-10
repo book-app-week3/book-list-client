@@ -23,7 +23,6 @@ var app = app || {};
     let template = Handlebars.compile($('#book-detail-template').text());
     $('#detail-list').append(template(ctx));
     $('.detail-view').on('click', 'button.delete', function(e){
-      console.log(ctx);
       e.preventDefault();
       app.Book.delete(ctx);
     })
@@ -45,6 +44,11 @@ var app = app || {};
       console.log('book', book);
       module.Book.createBook(book)
     })
+  }
+  bookView.initUpdateFormPage = function () {
+    reset();
+    $('.update-view').show();
+    $('')
   }
   module.bookView = bookView;
 })(app)

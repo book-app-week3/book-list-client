@@ -48,5 +48,17 @@ var __API_URL__ = 'https://gj-jk-booklist.herokuapp.com';
       .then(() => page('/'))
       .catch(errorCallback);
 
+  Book.update = ctx =>
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${ctx.book_id}`,
+      method: 'PUT',
+      data: {
+        title: ctx.title,
+        author: ctx.author,
+        isbn: ctx.isbn,
+        image_url: ctx.image_url,
+        description: ctx.description
+      }
+    })
   module.Book = Book;
 })(app)
