@@ -22,6 +22,11 @@ var app = app || {};
     $('#detail-list').empty();
     let template = Handlebars.compile($('#book-detail-template').text());
     $('#detail-list').append(template(ctx));
+    $('.detail-view').on('click', 'button.delete', function(e){
+      console.log(ctx);
+      e.preventDefault();
+      app.Book.delete(ctx);
+    })
   }
 
   bookView.initAddForm = function () {

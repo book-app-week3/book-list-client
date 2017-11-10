@@ -37,7 +37,16 @@ var __API_URL__ = 'https://gj-jk-booklist.herokuapp.com';
   Book.createBook = book =>
     $.post(`${__API_URL__}/api/v1/books`, book)
       .then(() => page('/'))
-      .then(console.log('what'))
       .catch(errorCallback);
+
+  Book.delete = ctx =>
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${ctx.book_id}`,
+      method: 'DELETE'
+    })
+      .then(console.log(`Delete book ${ctx.book_id}`))
+      .then(() => page('/'))
+      .catch(errorCallback);
+
   module.Book = Book;
 })(app)
