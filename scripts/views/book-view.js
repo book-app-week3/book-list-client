@@ -13,7 +13,8 @@ var app = app || {};
     reset();
     $('.book-view').show();
     $('#book-list').empty();
-    $('.book-view').append(`<p>There are ${app.Book.all.length} books in the database.</p>`);
+    $('.book-total').empty();
+    $('.book-total').append(`<p>There are ${app.Book.all.length} books in the database.</p>`);
     app.Book.all.forEach(book => $('#book-list').append(book.toHtml()));
   }
   bookView.initDetailPage = function(ctx) {
