@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 3 Lab</title>
+    <base href=".">
 <img src="" alt="">
     <script type="text/x-handlebars-template" id="error-template">
       <p>{{status}}: {{statusText}}</p>
@@ -13,7 +14,7 @@
         <h4>Title: {{title}}</h4>
         <p>Author: {{author}}</p>
         <img src="{{image_url}}"></img>
-        <p class="detail-button"><a href="/books/{{book_id}}">View Details</a></p>
+        <p class="detail-button"><a href="books/{{book_id}}">View Details</a></p>
       </li>
     </script>
     <script type="text/x-handlebars-template" id="book-detail-template">
@@ -31,9 +32,10 @@
       <h1>Books</h1>
       <nav class="navigation">
         <ul>
-          <li><a href="/">All Books</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/books/new">New Book</a></li>
+          <li><a href="">All Books</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="books/new">New Book</a></li>
+          <li><a href="admin">Admin</a></li>
         </ul>
       </nav>
     </header>
@@ -77,6 +79,12 @@
           <button type="submit">Update</button>
         </form>
       </section>
+      <section class="admin-view container">
+        <form id="admin-form">
+          <input type="number" id="passcode" placeholder="passcode">
+          <button type="submit">Submit passcode</button>
+        </form>
+      </section>
     </main>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -85,5 +93,6 @@
   <script src="/scripts/models/book.js" type="text/javascript"></script>
   <script src="/scripts/views/book-view.js" type="text/javascript"></script>
   <script src="/scripts/views/error-view.js" type="text/javascript"></script>
+  <script src="/scripts/views/admin-view.js" type="text/javascript"></script>
   <script src="/scripts/views/routes.js" type="text/javascript"></script>
 </html>
