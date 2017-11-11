@@ -24,7 +24,7 @@ var app = app || {};
     let template = Handlebars.compile($('#book-detail-template').text());
     $('#detail-list').append(template(ctx));
     $('#buttons').hide();
-    if (!localStorage.token){
+    if (localStorage.token){
       $('#buttons').show();
     }
     $('.detail-view').on('click', 'button.delete', function(e){
