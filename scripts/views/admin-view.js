@@ -12,6 +12,7 @@ var __API_URL__ = 'https://gj-jk-booklist.herokuapp.com';
   adminView.initAdminPage = function() {
     reset();
     $('.admin-view').show();
+    $('#admin-form').off('submit');
     $('#admin-form').on('submit', function(event) {
       event.preventDefault();
       let token = event.target.passcode.value;
