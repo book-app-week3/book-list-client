@@ -23,13 +23,16 @@ var app = app || {};
     $('#detail-list').empty();
     let template = Handlebars.compile($('#book-detail-template').text());
     $('#detail-list').append(template(ctx));
+    $('#buttons').hide();
+    if (localStorage.token === 'true'){
+      $('#buttons').show();
+    }
     $('.detail-view').on('click', 'button.delete', function(e){
       e.preventDefault();
       app.Book.delete(ctx);
     })
     $('.detail-view').on('click', 'button.update', function(e){
       e.preventDefault();
-      console.log(ctx);
       page(`/books/${ctx.book_id}/update`);
     })
   }
