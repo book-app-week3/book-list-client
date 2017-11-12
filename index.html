@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 3 Lab</title>
+    <title>BookFellows</title>
+    <link rel="stylesheet" href="styles/style.css">
     <base href=".">
 <img src="" alt="">
     <script type="text/x-handlebars-template" id="error-template">
@@ -11,25 +12,26 @@
     </script>
     <script type="text/x-handlebars-template" id="book-list-template">
       <li class="book-item" data-bookid="{{book_id}}">
-        <h4>Title: {{title}}</h4>
-        <p>Author: {{author}}</p>
+        <h4>{{title}}</h4>
         <img src="{{image_url}}"></img>
+        <p>By {{author}}</p>
         <p class="detail-button"><a href="books/{{book_id}}">View Details</a></p>
       </li>
     </script>
     <script type="text/x-handlebars-template" id="book-detail-template">
       <li class="detail-item">
         <h4>Title: {{title}}</h4>
-        <p>Author: {{author}}</p>
         <img src="{{image_url}}"></img>
-        <p>isbn: {{isbn}}</p>
+        <p>Author: {{author}}</p>
         <p>Description: {{description}}</p>
+        <p>isbn: {{isbn}}</p>
       </li>
     </script>
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1>Books</h1>
+      <h1>BookFellows</h1>
       <nav class="navigation">
         <ul>
           <li><a href="">All Books</a></li>
@@ -41,7 +43,6 @@
     </header>
     <main>
       <section class="book-view container">
-        <h2>Books</h2>
         <ul id="book-list"></ul>
         <div class="book-total"></div>
       </section>
