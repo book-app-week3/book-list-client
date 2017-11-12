@@ -1,0 +1,43 @@
+* {
+  border: 0px solid red;
+  font-family: 'Barlow Condensed', sans-serif;
+  list-style: none;
+}
+header {
+  background-color: gray;
+  margin-bottom: 10%;
+}
+header ul{
+  list-style: none;
+}
+h1 {
+  margin: 0px;
+}
+#book-list {
+  padding: 0%;
+}
+#book-list p{
+  margin-top: 0%;
+}
+header li {
+  width: 20%;
+  display: inline-block;
+}
+h4 {
+  font-size: 30px;
+  margin-bottom: 0%;
+  margin-top: 0%;
+}
+.book-item {
+  width: 80%;
+  margin-left: 10%;
+  background-color: gray;
+  margin-bottom: 10%;
+  color: white;
+}
+.detail-item {
+  background-color: gray;
+}
+body {
+  margin: 0px;
+}
